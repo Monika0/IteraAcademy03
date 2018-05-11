@@ -24,5 +24,12 @@ namespace BloggingPlatform.Api.Controllers
         {
             return _context.Categories;
         }
+
+        [HttpPost]
+        public void CreateCategories([FromBody] Categories category)
+        {
+            _context.Categories.Add(category);
+            _context.SaveChanges();
+        }
     }
 }
